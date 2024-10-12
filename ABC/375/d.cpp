@@ -15,14 +15,24 @@ void print(const std::vector<int>& v)
     std::cout << std::endl;
 }
 
-int main() {
-    int n;
-    cin >> n;
-    mint sum = 0;
-    rep(i, n) {
-        int x;
-        cin >> x;
-        sum += x;
+void print2(const std::vector<vector<int>>& v)
+{
+    for(auto vv: v) {
+        print(vv);
     }
-    cout << sum.val() << endl;
+}
+
+int main() {
+    string s;
+    cin >> s;
+    vector<ll> num(26), sum(26);
+    ll ans = 0;
+    int n = s.size();
+    rep(i, n) {
+        int v = s[i] - 'A';
+        ans += (i-1)*num[v] - sum[v];
+        num[v]++;
+        sum[v] += i;
+    }
+    cout << ans << endl;
 }

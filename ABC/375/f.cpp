@@ -9,10 +9,10 @@ using mint = modint998244353;
 
 void print(const std::vector<int>& v)
 {
-    std::for_each(v.begin(), v.end(), [](int x) {
-        std::cout << x << " ";
-    });
-    std::cout << std::endl;
+  std::for_each(v.begin(), v.end(), [](int x) {
+    std::cout << x << " ";
+  });
+  std::cout << std::endl;
 }
 
 int main() {
