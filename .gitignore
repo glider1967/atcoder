@@ -1,3 +1,4 @@
 *.out
 input.txt
-ac-library/
+ac-library/document_en
+ac-library/document_ja
