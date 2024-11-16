@@ -8,13 +8,17 @@ using ld = long double;
 using mint = modint998244353;
 
 int main() {
-  int n;
-  cin >> n;
-  int sum = 0;
-  rep(i, n) {
-    int x;
-    cin >> x;
-    sum += x;
+  string s;
+  cin >> s;
+  int x = 0;
+  for(auto ch : s) {
+    if(ch == '|') {
+      if(x != 0)
+        cout << x << " ";
+      x = 0;
+    } else {
+      x++;
+    }
   }
-  cout << sum << endl;
+  cout << endl;
 }

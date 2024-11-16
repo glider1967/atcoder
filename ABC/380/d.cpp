@@ -8,13 +8,33 @@ using ld = long double;
 using mint = modint998244353;
 
 int main() {
-  int n;
-  cin >> n;
-  int sum = 0;
-  rep(i, n) {
-    int x;
-    cin >> x;
-    sum += x;
+  string s;
+  cin >> s;
+  ll n = (ll)s.size();
+  ll q;
+  cin >> q;
+  rep(i, q) {
+    ll k;
+    cin >> k;
+    k--;
+    ll nn = k / n;
+    ll mod = k % n;
+    char ch = s[mod];
+    int count = 0;
+    while(nn > 0) {
+      if (nn & 1) count++;
+      nn >>= 1;
+    }
+    int parity = count % 2;
+    if (parity == 0) {
+      cout << ch << " ";
+    } else {
+      if (islower(ch)) {
+        cout << (char)toupper(ch) << " ";
+      } else {
+        cout << (char)tolower(ch) << " ";
+      }
+    }
   }
-  cout << sum << endl;
+  cout << endl;
 }

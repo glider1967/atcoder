@@ -8,13 +8,10 @@ using ld = long double;
 using mint = modint998244353;
 
 int main() {
-  int n;
+  string n;
   cin >> n;
-  int sum = 0;
-  rep(i, n) {
-    int x;
-    cin >> x;
-    sum += x;
-  }
-  cout << sum << endl;
+  int one = count(n.begin(), n.end(), '1');
+  int two = count(n.begin(), n.end(), '2');
+  int three = count(n.begin(), n.end(), '3');
+  cout << ((one == 1 && two == 2 && three == 3) ? "Yes" : "No") << endl;
 }
